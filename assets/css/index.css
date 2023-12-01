@@ -1,0 +1,14 @@
+.minimal-luxury-bg{
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.minimal-luxury-bg .navbar{
+  background-color: #fff;
+}
+
+.luxury-font{
+  font-family:'Playfair Display', serif;
+  font-weight: bold;
+  font-size: 2rem;
+}
