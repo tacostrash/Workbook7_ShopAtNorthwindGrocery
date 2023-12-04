@@ -26,15 +26,19 @@ selectOptionDropdown.onchange = () => {
   }
 };
 
+categoryDropdown.onchange = () => {
+  productListContainer.innerHTML = "";
+
+
+};
 searchButton.onclick = () => {
   if (selectOptionDropdown.value === "viewAll") {
     fetch("http://localhost:8081/api/products")
       .then((res) => res.json())
       .then((products) => displayProducts(products));
-
-
-  // } else if (selectOptionDropdown.value === "byCategory") {
-  //   const selectedCategoryId = categoryDropdown.value;
+      
+  } else if (selectOptionDropdown.value === "byCategory") {
+    const selectedCategoryId = categoryDropdown.value;
 
     fetch(`http://localhost:8081/api/products?category=${selectedCategoryId}`)
       .then((res) => res.json())
@@ -42,15 +46,7 @@ searchButton.onclick = () => {
   }
 };
 
-categoryDropdown.onchange = () => {
-  productListContainer.innerHTML = "";
 
-  const selectedCategoryId = categoryDropdown.value;
-
-  fetch(`http://localhost:8081/api/products?category=${selectedCategoryId}`)
-    .then((res) => res.json())
-    .then((products) => displayProducts(products, selectedCategoryId));
-};
 
 function displayProducts(products, selectedCategoryId) {
   // Clear existing content in productListContainer
@@ -60,7 +56,7 @@ function displayProducts(products, selectedCategoryId) {
 
   // Display each product
   products.forEach((product) => {
-    if (product.categoryId === categoryIdToMatch) {
+    if (!selectedCategoryId || product.categoryId === parseInt(selectedCategoryId)) {
       const productDiv = document.createElement("div");
       productDiv.innerHTML = `
       <p>${product.productId} - ${product.productName} - $${product.unitPrice}</p>
