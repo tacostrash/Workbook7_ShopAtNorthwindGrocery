@@ -18,12 +18,12 @@
   </div>
   </nav>
   <main class="container mt-4">
-    <form class="mb-4">
+    <form class="mb-4" id="searchForm">
       <div class="mb-3">
         <label for="searchOption" class="form-label">Select Search Option:</label>
           <select class="form-select form-control" id="searchOption">
-            <option value="all">View All</option>
-            <option value="category">Search By Category</option>
+            <option value="viewAll">View All</option>
+            <option value="byCategory">Search By Category</option>
           </select>
       </div>
 
@@ -33,7 +33,7 @@
           <!-- USE JS -->
         </select>
       </div>
-      <button type="submit" class="btn btn-primary">Search</button>
+      <button type="button" class="btn btn-primary" id="searchButton">Search</button>
     </form>
 
     <div class="row" id="productList">
