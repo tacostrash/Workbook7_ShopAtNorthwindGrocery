@@ -35,6 +35,13 @@ fetch(`http://localhost:8081/api/products/${productId}`)
       propertyValueSpan.classList.add("property-value");
       propertyValueSpan.textContent = value;
 
+      if(key === "unitPrice"){
+        const roundedValue = parseFloat(value).toFixed(2);
+        propertyValueSpan.textContent = `$${roundedValue}`;
+      } else {
+        propertyValueSpan.textContent = value;
+      }
+
       // Append the spans to the property div
       propertyDiv.appendChild(propertyNameSpan);
       propertyDiv.appendChild(propertyValueSpan);

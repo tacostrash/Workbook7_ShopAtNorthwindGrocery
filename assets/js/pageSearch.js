@@ -56,9 +56,11 @@ function displayProducts(products, selectedCategoryId) {
       const productDiv = document.createElement("div");
       productDiv.classList.add("product-item");
 
+      const roundedPrice = parseFloat(product.unitPrice).toFixed(2);
+
       productDiv.innerHTML = `
       <div class="product-info">
-      <p>${product.productId} - ${product.productName} - $${product.unitPrice}</p>
+      <p>${product.productId} - ${product.productName} - $${roundedPrice}</p>
       <p class="details-link">
       <a href="productDetails.html?productId=${product.productId}">See details</a>
       </p>
