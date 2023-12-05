@@ -1,3 +1,6 @@
+body{
+  font-family: Helvetica;
+}
 .minimal-luxury-bg {
   background-color: #f8f8f8;
   color: #333;
@@ -11,43 +14,49 @@
   font-family: "Playfair Display", serif;
   font-weight: bold;
   font-size: 2rem;
+  color: #333;
 }
 
-.hidden {
-  display: none;
+.product-details-container{
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 .product-item {
   display: flex;
   flex-direction: column;
   border: 1px solid #ddd;
   padding: 10px;
   margin-bottom: 10px;
+  background-color: #f5f5f5;
 }
 
-.product-info {
-  flex: 1;
+property-name{
+  font-weight: bold;
+  color: #555;
 }
 
-.details-link {
-  margin-top: 10px;
+property-value{
+  color: #333;
+}
+
+.details-link{
+  margin-top: 20px;
+  text-align: center;
 }
 
 .details-link a {
   text-decoration: none;
   background-color: #333;
   color: #fff;
-  padding: 5px 10px;
+  padding: 10px 20px;
   border-radius: 5px;
-  font-weight: bold;
+  font-weight: bold
 }
 
-.btn-custom{
+.details-link a:hover{
   background-color: #555;
-  color: #fff;
-  border: none;
-}
-
-.btn-custom:hover{
-  background-color: #777;
 }
